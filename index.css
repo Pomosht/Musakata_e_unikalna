@@ -154,3 +154,38 @@ body {
 
 .btn-login { color: var(--primary-green); border: 2px solid var(--primary-green); }
 .btn-signup { background: var(--primary-green); color: white; }
+/* Общи настройки за всички бутони за плавна анимация */
+.nav-btn, .btn-action {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Ефект за "Вход" (Очертан бутон) */
+.btn-login:hover {
+    background-color: var(--primary-green);
+    color: white !important; /* Става плътен цвят */
+    transform: translateY(-2px); /* Леко изскачане нагоре */
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
+
+/* Ефект за "Регистрация" (Плътен бутон) */
+.btn-signup:hover {
+    background-color: #1b5e20; /* По-тъмно зелено */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3);
+}
+
+/* Ефект за бутона в куест картата (Приеми куест) */
+.btn-action:hover {
+    background-color: #1b5e20;
+    transform: scale(1.03); /* Леко увеличаване */
+    letter-spacing: 0.5px; /* Леко раздалечаване на текста */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ефект при натискане (Click) за всички бутони */
+.nav-btn:active, .btn-action:active {
+    transform: translateY(0) scale(0.98); /* Връща се долу и се свива леко */
+}
