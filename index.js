@@ -1,5 +1,5 @@
 let currentXP = 0;
-const maxXP = 10 000;
+const maxXP = 500;
 
 const locations = [
     { 
@@ -7,7 +7,7 @@ const locations = [
         lat: 41.6453, 
         lng: 24.5583, 
         npc: "Гайдаря Стоян", 
-        task: "Изгубих си кожения мех за гайдата в гората. Можеш ли да го намериш?", 
+        task: "Изгубих си дървения мех за гайдата в гората. Можеш ли да го намериш?", 
         reward: 80 
     },
     { 
@@ -92,17 +92,4 @@ function completeQuest(reward, name) {
             alert("Честито! Ти си Герой на Родопите!");
         }, 500);
     }
-    function displayQuest(loc) {
-    const container = document.getElementById("quest-content");
-    container.innerHTML = `
-        <div class="quest-card">
-            <h3 style="margin-top:0;">📍 ${loc.name}</h3>
-            <p><strong>NPC:</strong> ${loc.npc}</p>
-            <p><em>"${loc.task}"</em></p>
-            <button class="btn-action" onclick="completeQuest(${loc.reward}, '${loc.name}')">
-                Приеми и изпълни (+${loc.reward} XP)
-            </button>
-        </div>
-    `;
-}
 }
