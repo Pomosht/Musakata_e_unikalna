@@ -1,13 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="bg">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <p> VLADI E GOTIN PICH</p>
-  
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Village Quest - Interactive Map</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Re-trying here."):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+    key: "ТВОЯТ_API_КЛЮЧ_ТУК",
+    v: "weekly"
+  });
+</script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="stats-box">
+            <span class="xp-label">Ниво: <span id="level">1</span></span>
+            <div class="xp-bar-bg">
+                <div id="xp-bar-fill"></div>
+            </div>
+            <span class="xp-label"><span id="xp-val">0</span> / 500 XP</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="nav-btn btn-login">Вход</a>
+            <a href="#" class="nav-btn btn-signup">Регистрация</a>
+        </div>
+    </nav>
+
+    <main id="main-game-area">
+        <section id="map-container">
+            <div id="map"></div>
+        </section>
+
+        <aside id="quest-sidebar">
+            <h2 class="sidebar-title">📜 Дневник</h2>
+            <p class="sidebar-subtitle">Избери село от картата, за да започнеш приключение.</p>
+            
+            <div id="quest-content">
+                <div class="quest-placeholder">
+                    <span class="icon-big">🏕️</span>
+                    <p>Очакваме твоите подвизи!</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="index.js"></script>
+</body>
 </html>
